@@ -1,4 +1,5 @@
 import HomeHeader from "@/components/homeHeader";
+import HomeSearch from "@/components/homeSearch";
 import Image from "next/image";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
       <HomeHeader />
 
       {/* body */}
-      <div className="flex flex-col justify-center items-center mt-24">
+      <div className="flex flex-col justify-center items-center h-[75vh] m-4">
         <Image
           // alt="Google Background"
           priority
@@ -16,7 +17,7 @@ export default function Home() {
           height="100"
           src="/images/bgGoogle.png"
         />
-        
+        <HomeSearch />
       </div>
     </>
   );
