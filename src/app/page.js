@@ -11,10 +11,12 @@ export default function Home() {
       {/* body */}
       <div className="flex flex-col justify-center items-center h-[75vh] m-4">
         <Image
-          // alt="Google Background"
+          alt="Google Background"
           priority
-          width="300"
-          height="100"
+          width="0"
+          height="0"
+          sizes="100vw"
+          className="w-[300px] h-auto"
           src="/images/bgGoogle.png"
         />
         <HomeSearch />

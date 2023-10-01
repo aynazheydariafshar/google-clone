@@ -12,6 +12,16 @@ export default function HomeSearch() {
     if (!state.trim()) return;
     router.push(`/search/web?searchTerm=${state}`);
   };
+  const randomSearch = async () => {
+    const response = await fetch("https://api.api-ninjas.com/v1/randomword", {
+      method: "GET",
+      headers: {
+        "X-Api-Key": "Or+UpiCtAlvYmFv0thdwWA==ffKr00HLk2U2jC4R",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => router.push(`/search/web?searchTerm=${data.word}`));
+  };
   return (
     <>
       <form
@@ -27,8 +37,12 @@ export default function HomeSearch() {
         <HiMicrophone className="text-xl text-gray-500" />
       </form>
       <div className="flex flex-col space-y-2 sm:space-y-0 justify-center sm:flex-row items-center space-x-7 mt-4">
-        <button className="btn">Google search</button>
-        <button className="btn">I'm Feeling Lucky</button>
+        <button onClick={handleSubmit} className="btn">
+          Google search
+        </button>
+        <button onClick={randomSearch} className="btn">
+          I'm Feeling Lucky
+        </button>
       </div>
     </>
   );
