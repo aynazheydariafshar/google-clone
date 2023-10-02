@@ -15,6 +15,10 @@ body {
 
 @layer components {
   .btn {
-    @apply bg-[#f8f9fa] p-1 h-10 w-40 rounded-md text-gray-700 hover:ring-1 hover:ring-gray-200 focus:outline-none hover:shadow-md
+    @apply bg-[#f8f9fa] p-1 h-10 w-40 rounded-md text-gray-700 hover:ring-1 hover:ring-gray-200 focus:outline-none hover:shadow-md;
+  }
+
+  .link {
+    @apply hover:underline cursor-pointer;
   }
 }
