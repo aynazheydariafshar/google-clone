@@ -6,6 +6,7 @@ import { HiMicrophone } from "react-icons/hi";
 
 export default function HomeSearch() {
   const [state, setState] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,6 +14,7 @@ export default function HomeSearch() {
     router.push(`/search/web?searchTerm=${state}`);
   };
   const randomSearch = async () => {
+    setLoading(true);
     const response = await fetch("https://api.api-ninjas.com/v1/randomword", {
       method: "GET",
       headers: {
@@ -20,7 +22,10 @@ export default function HomeSearch() {
       },
     })
       .then((response) => response.json())
-      .then((data) => router.push(`/search/web?searchTerm=${data.word}`));
+      .then((data) => {
+        setLoading(false);
+        router.push(`/search/web?searchTerm=${data.word}`);
+      });
   };
   return (
     <>
@@ -40,8 +45,15 @@ export default function HomeSearch() {
         <button onClick={handleSubmit} className="btn">
           Google search
         </button>
-        <button onClick={randomSearch} className="btn">
-          I'm Feeling Lucky
+        <button disabled={loading} onClick={randomSearch} className="btn disabled:opacity-50 flex items-center justify-center">
+          {loading ? (
+            <div
+              class="inline-block h-7 w-7 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]"
+              role="status"
+            ></div>
+          ) : (
+            "I'm Feeling Lucky"
+          )}
         </button>
       </div>
     </>
