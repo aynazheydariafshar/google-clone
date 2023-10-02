@@ -18,7 +18,7 @@ export default function HomeSearch() {
     const response = await fetch("https://api.api-ninjas.com/v1/randomword", {
       method: "GET",
       headers: {
-        "X-Api-Key": "Or+UpiCtAlvYmFv0thdwWA==ffKr00HLk2U2jC4R",
+        "X-Api-Key": process.env.NEXT_PUBLIC_RANDOM_API_KEY,
       },
     })
       .then((response) => response.json())
