@@ -31,7 +31,7 @@ export default function HomeSearch() {
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex mt-5 w-full justify-between items-center shadow-lg border space-x-3 rounded-full mx-auto p-2 max-w-xl"
+        className="flex mt-5 w-full justify-between items-center shadow-lg border space-x-3 rounded-full mx-auto px-5 py-3 max-w-xl"
       >
         <GoSearch className="text-xl text-gray-500" />
         <input
