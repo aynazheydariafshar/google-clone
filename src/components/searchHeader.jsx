@@ -23,7 +23,7 @@ export default function SearchHeader() {
         <div className="flex-1">
           <SearchBox />
         </div>
-        <div className="flex items-center justify-between hidden md:inline-flex space-x-2">
+        <div className="items-center justify-between hidden md:inline-flex space-x-2">
           <RiSettings3Line className="header-icon" />
           <TbGridDots className="header-icon" />
         </div>
