@@ -23,11 +23,11 @@ export default function SearchHeader() {
         <div className="flex-1">
           <SearchBox />
         </div>
-        <div className="items-center justify-between hidden md:inline-flex space-x-2">
+        <div className="items-center justify-between hidden md:inline-flex space-x-3">
           <RiSettings3Line className="header-icon" />
           <TbGridDots className="header-icon" />
         </div>
-        <button className="bg-blue-500 text-white py-1 px-3 rounded-md text-base hover:brightness-105 hover:shadow-md transition-all">
+        <button className="bg-blue-500 text-white py-2 px-5 rounded-md text-base hover:brightness-105 hover:shadow-md transition-all mx-4">
           Sign in
         </button>
       </div>

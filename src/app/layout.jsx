@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head />
-      <body suppressHydrationWarning={true}>
+      <body className="relative min-h-screen" suppressHydrationWarning={true}>
         {children}
 
         {/* footer */}
