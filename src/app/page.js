@@ -13,6 +13,7 @@ export default function Home() {
         <Image
           alt="Google Background"
           width="0"
+          priority
           height="0"
           sizes="100%"
           className="w-[300px] h-auto"
