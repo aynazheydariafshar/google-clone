@@ -9,7 +9,7 @@ export default function SearchHeader() {
   return (
     <header className="sticky top-0 bg-white">
       <div className="flex w-full p-6 items-center justify-between">
-        <Link href="">
+        <Link href="/">
           <Image
             alt="Google Background"
             priority

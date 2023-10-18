@@ -33,7 +33,10 @@ export default function HomeSearch() {
         onSubmit={handleSubmit}
         className="flex mt-5 w-full justify-between items-center shadow-lg border space-x-3 rounded-full mx-auto px-5 py-3 max-w-xl"
       >
-        <GoSearch className="text-xl text-gray-500" />
+        <GoSearch
+          onClick={handleSubmit}
+          className="text-xl cursor-pointer hover:shadow-xl hover:text-blue-700 text-gray-500"
+        />
         <input
           value={state}
           onChange={(e) => setState(e.target.value)}
@@ -45,7 +48,11 @@ export default function HomeSearch() {
         <button onClick={handleSubmit} className="btn">
           Google search
         </button>
-        <button disabled={loading} onClick={randomSearch} className="btn disabled:opacity-50 flex items-center justify-center">
+        <button
+          disabled={loading}
+          onClick={randomSearch}
+          className="btn disabled:opacity-50 flex items-center justify-center"
+        >
           {loading ? (
             <div
               class="inline-block h-7 w-7 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]"
