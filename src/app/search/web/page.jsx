@@ -10,7 +10,6 @@ export default async function WebPage({ searchParams }) {
   if (!response.ok) throw new Error("have problem");
   const data = await response.json();
   const results = data.items;
-  console.log(data);
   if (!results) {
     return (
       <div className="flex flex-col justify-center items-center pt-10">
